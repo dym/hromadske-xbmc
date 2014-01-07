@@ -1,0 +1,2 @@
+BeautifulSoup==3.2.1
+xbmcswift2==0.3.0
