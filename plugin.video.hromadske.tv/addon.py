@@ -1,4 +1,5 @@
 from xbmcswift2 import Plugin
+from resources.lib.hromadske import scraper
 
 
 plugin = Plugin()
@@ -6,9 +7,10 @@ plugin = Plugin()
 
 @plugin.route('/')
 def index():
+    video_id = scraper.get_online_video_id()
     item = {
         'label': 'Online',
-        'path': plugin.url_for('play_video', video_id='iVGXapcHcMc'),
+        'path': plugin.url_for('play_video', video_id=video_id),
         'is_playable': True
     }
     return [item]
