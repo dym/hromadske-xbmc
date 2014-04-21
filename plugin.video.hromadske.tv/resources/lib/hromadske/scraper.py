@@ -31,8 +31,8 @@ def get_online_video_id():
     html = get_url(CHANNEL_URL)
     if html:
         soup = BeautifulSoup(html)
-        rec = soup.find('ul', {'class': 'yt-uix-slider-list'}).find('li')
+        rec = soup.find('ul', {'class': 'yt-uix-slider-list'}).find('li').find('button')
         if rec:
-            video_id = rec['data-context-item-id']
+            video_id = rec['data-video-ids']
 
     return video_id
